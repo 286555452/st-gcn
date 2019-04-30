@@ -1,0 +1,33 @@
+#!/usr/bin/env python
+import argparse
+import sys
+
+# torchlight
+import torchlight
+from torchlight import import_class
+
+if __name__ == '__main__':
+
+    parser = argparse.ArgumentParser(description='Processor collection')
+
+    # region register processor yapf: disable
+    processors = dict()
+    processors['recognition'] = import_class('processor.recognition.REC_Processor')
+    processors['demo'] = import_class('processor.demo.Demo')
+    processors['openpose'] = import_class('processor.openpose.Pose')
+    processors['alphapose'] = import_class('processor.alphapose.Pose')
+    #endregion yapf: enable
+
+    # add sub-parser
+    subparsers = parser.add_subparsers(dest='processor')
+    for k, p in processors.items():
+        subparsers.add_parser(k, parents=[p.get_parser()])
+
+    # read arguments
+    arg = parser.parse_args()
+
+    # start
+    Processor = processors[arg.processor]
+    p = Processor(sys.argv[2:])
+
+    p.start()
