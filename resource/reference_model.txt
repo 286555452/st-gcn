@@ -1,1 +1,7 @@
+<<<<<<< HEAD
 kinetics-st_gcn.pt
+=======
+st_gcn.kinetics.pt
+st_gcn.ntu-xview.pt
+st_gcn.ntu-xsub.pt
+>>>>>>> e7024ac16714d6d6ac911f7cfb2910aea1940b15

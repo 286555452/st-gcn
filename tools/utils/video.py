@@ -2,8 +2,11 @@ import skvideo.io
 import numpy as np
 import cv2
 
+<<<<<<< HEAD
 import tools
 
+=======
+>>>>>>> e7024ac16714d6d6ac911f7cfb2910aea1940b15
 def video_info_parsing(video_info, num_person_in=5, num_person_out=2):
     data_numpy = np.zeros((3, len(video_info['data']), 18, num_person_in))
     for frame_info in video_info['data']:

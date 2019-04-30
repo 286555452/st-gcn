@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 weights: ./models/kinetics-st_gcn.pt
+=======
+weights: ./models/st_gcn.kinetics.pt
+>>>>>>> e7024ac16714d6d6ac911f7cfb2910aea1940b15
 
 # model
 model: net.st_gcn.Model

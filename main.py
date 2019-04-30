@@ -14,8 +14,11 @@ if __name__ == '__main__':
     processors = dict()
     processors['recognition'] = import_class('processor.recognition.REC_Processor')
     processors['demo'] = import_class('processor.demo.Demo')
+<<<<<<< HEAD
     processors['openpose'] = import_class('processor.openpose.Pose')
     processors['alphapose'] = import_class('processor.alphapose.Pose')
+=======
+>>>>>>> e7024ac16714d6d6ac911f7cfb2910aea1940b15
     #endregion yapf: enable
 
     # add sub-parser

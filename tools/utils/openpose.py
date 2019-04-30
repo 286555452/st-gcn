@@ -4,7 +4,11 @@ import json
 def json_pack(snippets_dir, video_name, frame_width, frame_height, label='unknown', label_index=-1):
     sequence_info = []
     p = Path(snippets_dir)
+<<<<<<< HEAD
     for path in sorted(p.glob(video_name+'*.json')):
+=======
+    for path in p.glob(video_name+'*.json'):
+>>>>>>> e7024ac16714d6d6ac911f7cfb2910aea1940b15
         json_path = str(path)
         print(path)
         frame_id = int(path.stem.split('_')[-2])

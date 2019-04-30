@@ -111,7 +111,11 @@ class Demo(IO):
             default='./resource/media/skateboarding.mp4',
             help='Path to video')
         parser.add_argument('--openpose',
+<<<<<<< HEAD
             default='../openpose/build',
+=======
+            default='3dparty/openpose/build',
+>>>>>>> e7024ac16714d6d6ac911f7cfb2910aea1940b15
             help='Path to openpose')
         parser.add_argument('--output_dir',
             default='./data/demo_result',

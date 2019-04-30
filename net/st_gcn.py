@@ -6,7 +6,10 @@ from torch.autograd import Variable
 from net.utils.tgcn import ConvTemporalGraphical
 from net.utils.graph import Graph
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e7024ac16714d6d6ac911f7cfb2910aea1940b15
 class Model(nn.Module):
     r"""Spatial temporal graph convolutional networks.
 
@@ -41,8 +44,14 @@ class Model(nn.Module):
         temporal_kernel_size = 9
         kernel_size = (temporal_kernel_size, spatial_kernel_size)
         self.data_bn = nn.BatchNorm1d(in_channels * A.size(1))
+<<<<<<< HEAD
         self.st_gcn_networks = nn.ModuleList((
             st_gcn(in_channels, 64, kernel_size, 1, residual=False, **kwargs),
+=======
+        kwargs0 = {k: v for k, v in kwargs.items() if k != 'dropout'}
+        self.st_gcn_networks = nn.ModuleList((
+            st_gcn(in_channels, 64, kernel_size, 1, residual=False, **kwargs0),
+>>>>>>> e7024ac16714d6d6ac911f7cfb2910aea1940b15
             st_gcn(64, 64, kernel_size, 1, **kwargs),
             st_gcn(64, 64, kernel_size, 1, **kwargs),
             st_gcn(64, 64, kernel_size, 1, **kwargs),
@@ -194,4 +203,8 @@ class st_gcn(nn.Module):
         x, A = self.gcn(x, A)
         x = self.tcn(x) + res
 
+<<<<<<< HEAD
         return self.relu(x), A
+=======
+        return self.relu(x), A
+>>>>>>> e7024ac16714d6d6ac911f7cfb2910aea1940b15
